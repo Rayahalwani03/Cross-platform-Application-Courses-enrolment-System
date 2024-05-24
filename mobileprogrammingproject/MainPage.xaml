@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobileprogrammingproject.MainPage"
+             Title="StudentPage"
+             >
+
+    <ScrollView BackgroundColor="Beige" >
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <Entry 
+                x:Name="Student_Name"
+                Placeholder="Enter Student Name"
+                HorizontalOptions="Center"
+                Margin="5"
+                WidthRequest="300"
+                />
+
+            <Entry 
+                x:Name="Student_Department"
+                Placeholder="Enter Student Dept"
+                HorizontalOptions="Center"
+                                Margin="5"
+                                WidthRequest="300"
+
+                />
+
+            <Button Text="Add"
+                    x:Name="Add_Student"
+                    HorizontalOptions="Center"
+                    Clicked="Add_Student_Clicked"
+                                    Margin="5"
+                    />
+            
+            <Button Text="Show"
+                    x:Name="Show_Student"
+                    HorizontalOptions="Center"
+                    Clicked="Show_Student_Clicked"
+                                    Margin="5"
+                    />
+            
+            <Label Text="Students List" HorizontalOptions="Center" FontAttributes="Bold" FontSize="30"/>
+
+            <ScrollView BackgroundColor="White" >
+                <ListView x:Name="Student_List" ItemTapped="Student_List_ItemTapped" HorizontalOptions="Center" >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+
+                                    <Label Text="{Binding StudentID}"/>
+
+                                    <Label Text="{Binding StudentName}"/>
+
+                                    <Label Text="{Binding StudentDepartment}"/>
+                                    <Button Text="Delete"
+                                            x:Name="Delete_Student"
+                                            BindingContext="{Binding StudentID}"
+                                            Clicked="Delete_Student_Clicked"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView> 
+            
+            
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>

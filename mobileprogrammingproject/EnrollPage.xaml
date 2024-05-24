@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobileprogrammingproject.EnrollPage"
+             Title="EnrollPage">
+    <ScrollView  BackgroundColor="Beige">
+        <StackLayout Orientation="Vertical" >
+            <StackLayout HorizontalOptions="Center" >
+
+                <StackLayout Orientation="Horizontal"  >
+
+                    <StackLayout Orientation="Vertical" Margin="10">
+                        <Label Text="Students List" HorizontalOptions="Center"  FontAttributes="Bold" FontSize="30"/>
+
+                        <ScrollView HorizontalOptions="Start">
+                            <ListView x:Name="Student_List" ItemTapped="Student_List_ItemTapped"  HorizontalOptions="Center" >
+
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout>
+
+                                                <Label Text="{Binding StudentID}"/>
+                                                <Label Text="{Binding StudentName}"/>
+                                                <Label Text="{Binding StudentDepartment}"/>
+
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollView>
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Vertical" Margin="10">
+                        <Label Text="Courses List" HorizontalOptions="Center"  FontAttributes="Bold" FontSize="30"/>
+
+                        <ScrollView HorizontalOptions="EndAndExpand">
+                            <ListView x:Name="Course_List" ItemTapped="Course_List_ItemTapped"  HorizontalOptions="Center" >
+
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout>
+                                                <Label Text="{Binding CourseID}"/>
+
+                                                <Label Text="{Binding CourseCode}"/>
+
+                                                <Label Text="{Binding CourseName}"/>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollView>
+                    </StackLayout>
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+
+
+            <Button Text="Show Selections"
+                x:Name="Show_Selections"
+                HorizontalOptions="Center"
+                Clicked="Show_Selections_Clicked"
+                                    Margin="5"
+                />
+            
+            <Button Text="Add"
+                    x:Name="Add_Enroll"
+                    HorizontalOptions="Center"
+                    Clicked="Add_Enroll_Clicked"
+                    Margin="5"
+                    />
+
+            <Button Text="Show"
+                    x:Name="Show_Enroll"
+                    HorizontalOptions="Center"
+                    Clicked="Show_Enroll_Clicked"
+                                        Margin="5"
+                    />
+
+    
+
+            <Label Text="Enroll List" HorizontalOptions="Center" FontAttributes="Bold" FontSize="30"/>
+
+            <ScrollView  BackgroundColor="White" >
+                <ListView x:Name="Enroll_List" ItemTapped="Enroll_List_ItemTapped"  HorizontalOptions="Center" >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding EnrollID}"/>
+
+                                    <Label Text="{Binding CourseID}"/>
+
+                                    <Label Text="{Binding StudentID}"/>
+
+                                    <Button Text="Delete"
+                                        x:Name="Delete_Enroll"
+                                        BindingContext="{Binding EnrollID}"
+                                        Clicked="Delete_Enroll_Clicked"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

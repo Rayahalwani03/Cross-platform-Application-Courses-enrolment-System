@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobileprogrammingproject.CoursePage"
+             Title="CoursePage">
+    <ScrollView BackgroundColor="Beige">
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <Entry 
+            x:Name="Course_Code"
+            Placeholder="Enter Course Code"
+            HorizontalOptions="Center"
+                                           Margin="5"
+                                WidthRequest="300"
+
+                />
+
+            <Entry 
+            x:Name="Course_Name"
+            Placeholder="Enter Course Name"
+            HorizontalOptions="Center"
+                                                Margin="5"
+                                WidthRequest="300"
+
+                />
+
+            <Button Text="Add"
+                x:Name="Add_Course"
+                HorizontalOptions="Center"
+                    Clicked="Add_Course_Clicked"
+                     Margin="5"
+                    />
+
+            <Button Text="Show"
+                x:Name="Show_Course"
+                HorizontalOptions="Center"
+                    Clicked="Show_Course_Clicked"
+                     Margin="5"
+                    />
+
+            <Label Text="Courses List" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold"/>
+
+            <ScrollView BackgroundColor="White">
+                <ListView x:Name="Course_List" ItemTapped="Course_List_ItemTapped"  HorizontalOptions="Center" >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+
+                                    <Label Text="{Binding CourseID}"/>
+
+                                    <Label Text="{Binding CourseCode}"/>
+
+                                    <Label Text="{Binding CourseName}"/>
+                                    <Button Text="Delete"
+                                        x:Name="Delete_Course"
+                                        BindingContext="{Binding CourseID}"
+                                        Clicked="Delete_Course_Clicked"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>
