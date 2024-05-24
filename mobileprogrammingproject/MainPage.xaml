@@ -5,9 +5,16 @@
              Title="StudentPage"
              >
 
-    <ScrollView BackgroundColor="Beige" >
+    <ScrollView BackgroundColor="#D9D9D9" >
 
-        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="80">
+
+            <Label Text="Add Student Info" 
+                   TextColor="Black"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   />
 
             <Entry 
                 x:Name="Student_Name"
@@ -15,6 +22,7 @@
                 HorizontalOptions="Center"
                 Margin="5"
                 WidthRequest="300"
+                BackgroundColor="white"
                 />
 
             <Entry 
@@ -23,6 +31,8 @@
                 HorizontalOptions="Center"
                                 Margin="5"
                                 WidthRequest="300"
+                                BackgroundColor="white"
+                
 
                 />
 
@@ -31,6 +41,9 @@
                     HorizontalOptions="Center"
                     Clicked="Add_Student_Clicked"
                                     Margin="5"
+                                      WidthRequest="70"
+                    BackgroundColor="#FCF434"
+                     TextColor="Black"
                     />
             
             <Button Text="Show"
@@ -38,6 +51,9 @@
                     HorizontalOptions="Center"
                     Clicked="Show_Student_Clicked"
                                     Margin="5"
+                                      WidthRequest="70"
+                     BackgroundColor="#9C59D1"
+                     TextColor="Black"
                     />
             
             <Label Text="Students List" HorizontalOptions="Center" FontAttributes="Bold" FontSize="30"/>
@@ -58,7 +74,9 @@
                                     <Button Text="Delete"
                                             x:Name="Delete_Student"
                                             BindingContext="{Binding StudentID}"
-                                            Clicked="Delete_Student_Clicked"/>
+                                            Clicked="Delete_Student_Clicked"
+                                            BackgroundColor="#9F3E3E"
+                                            />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

@@ -3,8 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mobileprogrammingproject.EnrollPage"
              Title="EnrollPage">
-    <ScrollView  BackgroundColor="Beige">
+    <ScrollView  BackgroundColor="#D9D9D9">
+
+
+
+
         <StackLayout Orientation="Vertical" >
+
+            <Label Text="Select:" 
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   FontSize="40"
+                   FontAttributes="Bold"/>
+
+
             <StackLayout HorizontalOptions="Center" >
 
                 <StackLayout Orientation="Horizontal"  >
@@ -67,6 +79,8 @@
             <Button Text="Show Selections"
                 x:Name="Show_Selections"
                 HorizontalOptions="Center"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="Wheat"
                 Clicked="Show_Selections_Clicked"
                                     Margin="5"
                 />
@@ -76,6 +90,9 @@
                     HorizontalOptions="Center"
                     Clicked="Add_Enroll_Clicked"
                     Margin="5"
+                                      WidthRequest="70"
+                                        BackgroundColor="#FCF434"
+                     TextColor="Black"
                     />
 
             <Button Text="Show"
@@ -83,6 +100,9 @@
                     HorizontalOptions="Center"
                     Clicked="Show_Enroll_Clicked"
                                         Margin="5"
+                     BackgroundColor="#9C59D1"
+                     TextColor="Black"
+                    WidthRequest="70"
                     />
 
     
@@ -105,7 +125,10 @@
                                     <Button Text="Delete"
                                         x:Name="Delete_Enroll"
                                         BindingContext="{Binding EnrollID}"
-                                        Clicked="Delete_Enroll_Clicked"/>
+                                        Clicked="Delete_Enroll_Clicked"
+                                             BackgroundColor="#9F3E3E"
+                                            />
+                                    
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

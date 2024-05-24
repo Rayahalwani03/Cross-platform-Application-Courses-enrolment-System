@@ -3,9 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mobileprogrammingproject.CoursePage"
              Title="CoursePage">
-    <ScrollView BackgroundColor="Beige">
+    <ScrollView BackgroundColor="#D9D9D9">
 
-        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center"  Margin="80">
+
+
+            <Label Text="Add Course Info" 
+                   TextColor="Black"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   />
+
 
             <Entry 
             x:Name="Course_Code"
@@ -13,6 +22,7 @@
             HorizontalOptions="Center"
                                            Margin="5"
                                 WidthRequest="300"
+                                BackgroundColor="white"
 
                 />
 
@@ -22,6 +32,7 @@
             HorizontalOptions="Center"
                                                 Margin="5"
                                 WidthRequest="300"
+                                BackgroundColor="white"
 
                 />
 
@@ -29,7 +40,10 @@
                 x:Name="Add_Course"
                 HorizontalOptions="Center"
                     Clicked="Add_Course_Clicked"
+                     TextColor="Black"
                      Margin="5"
+                                        BackgroundColor="#FCF434"
+                                      WidthRequest="70"
                     />
 
             <Button Text="Show"
@@ -37,6 +51,9 @@
                 HorizontalOptions="Center"
                     Clicked="Show_Course_Clicked"
                      Margin="5"
+                    TextColor="Black"
+                     BackgroundColor="#9C59D1"
+                                      WidthRequest="70"
                     />
 
             <Label Text="Courses List" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold"/>
@@ -57,7 +74,9 @@
                                     <Button Text="Delete"
                                         x:Name="Delete_Course"
                                         BindingContext="{Binding CourseID}"
-                                        Clicked="Delete_Course_Clicked"/>
+                                        Clicked="Delete_Course_Clicked"
+                                             BackgroundColor="#9F3E3E"
+                                            />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
